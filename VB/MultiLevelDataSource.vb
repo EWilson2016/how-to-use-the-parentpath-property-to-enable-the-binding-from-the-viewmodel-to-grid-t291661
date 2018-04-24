@@ -59,7 +59,10 @@ Namespace MultiLevelMasterDetail
         End Sub
         Private Sub InitMasterItems()
             For i As Integer = 0 To 9
-                Items.Add(New MasterLevelItem() With {.MasterId = i, .MasterName = String.Format("master item {0}", i)})
+                Items.Add(New MasterLevelItem() With { _
+                    .MasterId = i, _
+                    .MasterName = String.Format("master item {0}", i) _
+                })
             Next i
         End Sub
         Private Sub RaisePropertyChanged(ByVal propertyName As String)
@@ -80,7 +83,11 @@ Namespace MultiLevelMasterDetail
         End Sub
         Private Sub InitDetailItems()
             For i As Integer = 0 To 9
-                DetailItems.Add(New DetailLevelItem() With {.DetailId = i, .DetailName = String.Format("detail item {0}", i), .MasterItem = Me})
+                DetailItems.Add(New DetailLevelItem() With { _
+                    .DetailId = i, _
+                    .DetailName = String.Format("detail item {0}", i), _
+                    .MasterItem = Me _
+                })
             Next i
         End Sub
     End Class
